@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { TestComponent } from './test/test.component';
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contact', component: ContactComponent }
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavigationbarComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
