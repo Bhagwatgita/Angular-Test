@@ -39,11 +39,9 @@ export class ContactComponent implements OnInit {
         Validators.minLength(3),
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
-      // state: new FormControl('', Validators.compose ([
-      //     Validators.required,
-      //   Validators.minLength(3),
-      //   Validators.pattern('[\\w\\-\\s\\/]+')
-      // ])),
+      state: new FormControl('', Validators.compose ([
+          Validators.required
+      ])),
       zip: new FormControl('', Validators.compose ([
           Validators.required,
         Validators.minLength(3),
@@ -54,16 +52,14 @@ export class ContactComponent implements OnInit {
         Validators.minLength(3),
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
-      // hosting: new FormControl('', Validators.compose ([
-      //     Validators.required,
-      //   Validators.minLength(3),
-      //   Validators.pattern('[\\w\\-\\s\\/]+')
-      // ])),
+      hosting: new FormControl('', Validators.compose ([
+          Validators.required
+      ])),
       comment: new FormControl('', Validators.compose ([
           Validators.required,
         Validators.minLength(3),
         Validators.pattern('[\\w\\-\\s\\/]+')
-      ])),
+      ]))
 
     });
   }
