@@ -19,15 +19,51 @@ export class ContactComponent implements OnInit {
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
       last_name: new FormControl('', this.textValidator),
-      email: new FormControl(''),
-      phone: new FormControl(''),
-      address: new FormControl(''),
-      city: new FormControl(''),
-      state: new FormControl(''),
-      zip: new FormControl(''),
-      website: new FormControl(''),
-      hosting: new FormControl(''),
-      comment: new FormControl(''),
+      email: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
+      phone: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
+      address: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
+      city: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
+      // state: new FormControl('', Validators.compose ([
+      //     Validators.required,
+      //   Validators.minLength(3),
+      //   Validators.pattern('[\\w\\-\\s\\/]+')
+      // ])),
+      zip: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
+      website: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
+      // hosting: new FormControl('', Validators.compose ([
+      //     Validators.required,
+      //   Validators.minLength(3),
+      //   Validators.pattern('[\\w\\-\\s\\/]+')
+      // ])),
+      comment: new FormControl('', Validators.compose ([
+          Validators.required,
+        Validators.minLength(3),
+        Validators.pattern('[\\w\\-\\s\\/]+')
+      ])),
 
     });
   }
