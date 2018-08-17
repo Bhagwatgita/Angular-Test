@@ -1,0 +1,81 @@
+
+<router-outlet></router-outlet>
+
+<div class="container">
+
+    <form class="well form-horizontal"  [formGroup]="myform"
+          (ngSubmit) ="onSend(myform.value)" action=" " method="post"  id="validation_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend>User Credential Form </legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">User Name</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  formControlName="first_name" placeholder="First Name" class="form-control"  type="text"
+   [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+   <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+      <div *ngIf="f.first_name.errors.required">User Name is required</div>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">E-Mail</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input formControlName="email" placeholder="E-Mail Address" class="form-control"  type="email" 
+  [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+    <div *ngIf="f.email.errors.required">Email is required</div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Phone #</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+  <input formControlName="phone" placeholder="(845)555-1212" class="form-control" type="text"
+  [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+  <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+    <div *ngIf="f.phone.errors.required">Email is required</div>
+</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Success message -->
+<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" [disabled]= "!myform.valid" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    <!-- /.container -->
+    <p>
+      Form Status: {{ myform.status }}
+    </p>

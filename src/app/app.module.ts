@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { NavigationbarComponent } from './navigationbar/navigationbar.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { TestComponent } from './test/test.component';
+import { FormValidationComponent } from './form-validation/form-validation.component';
+
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'form-validation', component: FormValidationComponent }
   // ,
   // { path: '', redirectTo: '', pathMatch: '' },
 ];
@@ -19,7 +21,7 @@ const appRoutes: Routes = [
     NavigationbarComponent,
     HomeComponent,
     ContactComponent,
-    TestComponent
+    FormValidationComponent
   ],
   imports: [
     BrowserModule,
