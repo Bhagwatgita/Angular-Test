@@ -57,7 +57,14 @@ mobileNumber:new FormControl('', Validators.compose ([
         console.log(response);
     });
     }
-    
+    static parse(json: string) {
+      var data = JSON.parse(json);
+       return new Employee(data.Name, data.Gender,data.Salary,
+      data.Address,data.Email,data.Dob,
+      data.Occupation,data.IdType,
+      data.WalletNumber,data.MobileNumber
+      );
+  }
     
   
   onSend = function (log) {
